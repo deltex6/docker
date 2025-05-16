@@ -1,0 +1,43 @@
+# Etap 1: Budowanie z obrazu scratch (placeholder - scratch nie obsługuje Node.js bezpośrednio)
+FROM scratch AS builder
+
+# Aby kontynuować budowę w praktyce, używamy obrazu node w tym samym etapie
+FROM node:18-alpine AS nodebuilder
+
+# Użycie zmiennej wersji
+ARG VERSION
+ENV VERSION=${VERSION}
+
+
+# Ustawienie katalogu roboczego
+WORKDIR /app
+
+# Kopiowanie plików package
+COPY package.json .
+
+# Instalacja zależności produkcyjnych
+RUN npm install --production
+
+# Kopiowanie pozostałych plików aplikacji
+COPY . .
+
+# Etap 2: Obraz końcowy
+FROM node:18-alpine
+
+# Ustawienie katalogu roboczego
+WORKDIR /app
+
+# Skopiowanie aplikacji z poprzedniego etapu
+COPY --from=nodebuilder /app /app
+
+# Dodanie pliku konfiguracyjnego JSON (można nadpisać w czasie budowy)
+COPY config.json /app/config.json
+
+# Dodanie metadanych autora
+LABEL author="Tomasz Persa"
+ 
+# Eksponowanie portu
+EXPOSE 3000
+
+# Uruchomienie aplikacji
+CMD ["npm", "start"]

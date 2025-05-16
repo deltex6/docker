@@ -1,0 +1,4 @@
+{  
+  "healthEndpoint": "/health",
+  "port": 3000
+}
