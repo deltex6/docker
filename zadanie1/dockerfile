@@ -1,0 +1,41 @@
+# Obraz bazowy node alpine
+FROM node:18-alpine AS nodebuilder
+
+# Uzycie zmiennej wersji
+ARG VERSION
+ENV VERSION=${VERSION}
+
+
+# Ustawienie katalogu roboczego
+WORKDIR /app
+
+# Kopiowanie plikow package
+COPY package.json .
+
+# Instalacja zaleznosci produkcyjnych
+RUN npm install --production
+
+# Kopiowanie pozostalych plikow aplikacji
+COPY . .
+
+# Etap 2: Obraz koncowy
+FROM nodebuilder
+
+# Skopiowanie aplikacji z poprzedniego etapu
+COPY --from=nodebuilder /app /app
+
+# Dodanie pliku konfiguracyjnego 'JSON'
+COPY config.json /app/config.json
+
+# Dodanie metadanych autora
+LABEL author="Tomasz Persa"
+ 
+# Eksponowanie portu
+EXPOSE 3000
+
+# Sprawdzanie, czy serwer dziala
+HEALTHCHECK --interval=10s --timeout=3s --start-period=5s --retries=3 \
+	CMD wget --spider --quiet http://localhost:3000 || exit 1
+
+# Uruchomienie aplikacji
+CMD ["npm", "start"]
