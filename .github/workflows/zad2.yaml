@@ -1,4 +1,4 @@
-name: Build and Push Zadanie1 Container
+name: Build and Push Zadanie1 Docker Image
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
 
 jobs:
   build-and-push:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest, Ubuntu 24.04.2 LTS
     permissions:
       contents: read
       packages: write  # for GHCR
