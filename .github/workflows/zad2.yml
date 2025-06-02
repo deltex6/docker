@@ -60,7 +60,7 @@ jobs:
         uses: docker/scout-action@v1   # lub najnowsza stabilna wersja
         with:
           command: cves                        # obowiązkowy parametr „command” :contentReference[oaicite:0]{index=0}
-          image: ghcr.io/${{ github.repository_owner }}/zadanie1:${{ github.sha }}
+          # image: ghcr.io/${{ github.repository_owner }}/zadanie1:${{ github.sha }}
           only-severities: critical,high       # filtr na CVE o statusie critical lub high :contentReference[oaicite:1]{index=1}
           exit-code: true                       # w razie wykrycia CVE o wysokim statusie akcja zwróci kod błędu
           github-token: ${{ secrets.GH_TOKEN }}  # zamiast „token” należy użyć „github-token” :contentReference[oaicite:2]{index=2}
