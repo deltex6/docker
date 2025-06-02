@@ -1,9 +1,9 @@
-name: Build and Push Zadanie1 Docker Image
+name: Build and Push Zadanie2 Docker Image
 
 on:
   push:
     paths:
-      - 'zadanie1/**'
+      - 'zadanie2/**'
   workflow_dispatch:
 
 jobs:
@@ -46,21 +46,21 @@ jobs:
         id: build
         uses: docker/build-push-action@v4
         with:
-          context: ./zadanie1
-          file: ./zadanie1/dockerfile
+          context: ./zadanie2
+          file: ./zadanie2/dockerfile
           platforms: linux/amd64,linux/arm64
           push: false
-          tags: ghcr.io/${{ github.repository_owner }}/zadanie1:${{ github.sha }}
+          tags: ghcr.io/${{ github.repository_owner }}/zadanie2:${{ github.sha }}
           cache-from: |
-            type=registry,ref=${{ vars.DOCKERHUB_USERNAME }}/zadanie1-cache:cache
+            type=registry,ref=${{ vars.DOCKERHUB_USERNAME }}/zadanie2-cache:cache
           cache-to: |
-            type=registry,mode=max,ref=${{ vars.DOCKERHUB_USERNAME }}/zadanie1-cache:cache
+            type=registry,mode=max,ref=${{ vars.DOCKERHUB_USERNAME }}/zadanie2-cache:cache
 
       - name: Scan for vulnerabilities (Docker Scout)
         uses: docker/scout-action@v1   # lub najnowsza stabilna wersja
         with:
           command: cves                        # obowiązkowy parametr „command” :contentReference[oaicite:0]{index=0}
-          # image: ghcr.io/${{ github.repository_owner }}/zadanie1:${{ github.sha }}
+          # image: ghcr.io/${{ github.repository_owner }}/zadanie2:${{ github.sha }}
           only-severities: critical,high       # filtr na CVE o statusie critical lub high :contentReference[oaicite:1]{index=1}
           exit-code: true                       # w razie wykrycia CVE o wysokim statusie akcja zwróci kod błędu
           github-token: ${{ secrets.GH_TOKEN }}  # zamiast „token” należy użyć „github-token” :contentReference[oaicite:2]{index=2}
@@ -78,10 +78,10 @@ jobs:
         if: steps.scout-check.outputs.count == '0'
         uses: docker/build-push-action@v4
         with:
-          context: ./zadanie1
-          file: ./zadanie1/dockerfile
+          context: ./zadanie2
+          file: ./zadanie2/dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/zadanie1:latest
-            ghcr.io/${{ github.repository_owner }}/zadanie1:${{ github.sha }}
+            ghcr.io/${{ github.repository_owner }}/zadanie2:latest
+            ghcr.io/${{ github.repository_owner }}/zadanie2:${{ github.sha }}
