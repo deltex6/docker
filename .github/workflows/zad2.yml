@@ -57,7 +57,7 @@ jobs:
             type=registry,mode=max,ref=${{ vars.DOCKERHUB_USERNAME }}/zadanie1-cache:cache
 
       - name: Scan for vulnerabilities (Docker Scout)
-        uses: docker/scout-action@v0.18.1   # lub najnowsza stabilna wersja
+        uses: docker/scout-action@v1   # lub najnowsza stabilna wersja
         with:
           command: cves                        # obowiązkowy parametr „command” :contentReference[oaicite:0]{index=0}
           image: ghcr.io/${{ github.repository_owner }}/zadanie1:${{ github.sha }}
