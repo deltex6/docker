@@ -1,14 +1,9 @@
 # Obraz bazowy node alpine
 FROM node:24-alpine AS nodebuilder
 
-# Sprawdź wersję Go
-RUN go version
-
-
 # Uzycie zmiennej wersji
 ARG VERSION
 ENV VERSION=${VERSION}
-
 
 # Ustawienie katalogu roboczego
 WORKDIR /app
