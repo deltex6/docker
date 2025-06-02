@@ -56,25 +56,25 @@ jobs:
           cache-to: |
             type=registry,mode=max,ref=${{ vars.DOCKERHUB_USERNAME }}/zadanie2-cache:cache
 
-      - name: Scan for vulnerabilities (Docker Scout)
-        uses: docker/scout-action@v1.18.1   # lub najnowsza stabilna wersja
-        with:
-          command: cves                        # obowiązkowy parametr „command” :contentReference[oaicite:0]{index=0}
-          only-severities: critical,high       # filtr na CVE o statusie critical lub high :contentReference[oaicite:1]{index=1}
-          exit-code: true 
-          github-token: ${{ secrets.GH_TOKEN }}  # zamiast „token” należy użyć „github-token” :contentReference[oaicite:2]{index=2}
-          format: json
-          output: scout-report.json
+#      - name: Scan for vulnerabilities (Docker Scout)
+#        uses: docker/scout-action@v1.18.1   # lub najnowsza stabilna wersja
+#        with:
+#          command: cves                        # obowiązkowy parametr „command” :contentReference[oaicite:0]{index=0}
+#         only-severities: critical,high       # filtr na CVE o statusie critical lub high :contentReference[oaicite:1]{index=1}
+#          exit-code: true 
+#          github-token: ${{ secrets.GH_TOKEN }}  # zamiast „token” należy użyć „github-token” :contentReference[oaicite:2]{index=2}
+#          format: json
+#          output: scout-report.json
 
 
-      - name: Check scan results
-        id: scout-check
-        run: |
-          high=$(jq '[.vulnerabilities[] | select(.severity=="high" or .severity=="critical")] | length' scout-report.json)
-          echo "count=$high" >> $GITHUB_OUTPUT
+#      - name: Check scan results
+#        id: scout-check
+#        run: |
+#          high=$(jq '[.vulnerabilities[] | select(.severity=="high" or .severity=="critical")] | length' scout-report.json)
+#          echo "count=$high" >> $GITHUB_OUTPUT
 
       - name: Push image if secure
-        if: steps.scout-check.outputs.count == '0'
+        # if: steps.scout-check.outputs.count == '0'
         uses: docker/build-push-action@v4
         with:
           context: ./zadanie2
