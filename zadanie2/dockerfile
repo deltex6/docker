@@ -2,17 +2,17 @@
 FROM node:24-alpine AS nodebuilder
 
 #pobieranie nowej wersji pakietu
-#RUN apk add --update --no-cache stdlib
+RUN apk add --update --no-cache pkg:golang/stdlib@1.23.8
 
 # RUN go install github.com/x/y@latest \
 #  && cp $GOPATH/bin/package /usr/local/bin/
 
 
 # Zainstaluj Go
-ENV GOLANG_VERSION=1.23.8
-RUN wget https://go.dev/dl/go${GOLANG_VERSION}.linux-amd64.tar.gz && \
-    tar -C /usr/local -xzf go${GOLANG_VERSION}.linux-amd64.tar.gz && \
-    rm go${GOLANG_VERSION}.linux-amd64.tar.gz
+# ENV GOLANG_VERSION=1.23.8
+# RUN wget https://go.dev/dl/go${GOLANG_VERSION}.linux-amd64.tar.gz && \
+#     tar -C /usr/local -xzf go${GOLANG_VERSION}.linux-amd64.tar.gz && \
+#     rm go${GOLANG_VERSION}.linux-amd64.tar.gz
 
 # Ustaw zmienne środowiskowe
 ENV PATH="/usr/local/go/bin:${PATH}"
