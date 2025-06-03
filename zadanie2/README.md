@@ -4,8 +4,14 @@
 * Wygenerowanie PAT na Github
 * Wygenerowanie tokena na Dockerhub
 * Ustawienie zmiennych środowiskowych dla projektu
-* Ustawienie 'secret-ów' dla projektu  
+* Ustawienie 'secret-ów' dla projektu
 
+
+![3   secret](https://github.com/user-attachments/assets/310dfbe8-3863-4dcc-9c2b-a40e4a01c305)
+_secret projektu_  
+
+![4  variables](https://github.com/user-attachments/assets/dca840ee-f1bd-4b92-be53-1181060f1e59)
+_zmienna projktu_  
 
 ## 2. Opracowanie łańcucha (pipeline) w usłudze GitHub Actions
 
@@ -14,8 +20,12 @@
 * są wykorzystywane dane cache (eksporter: registry oraz backend-u registry w trybie max) zamieszczone w publicznym repozytorium na [DockerHub](https://hub.docker.com/r/timtur/zadanie2-cache).
 * Test CVE obrazu, który miał zapewnić, że obraz by był przesłany do publicznego repozytorium obrazów na GitHub, pod warunkiem, że obraz nie będzie zawierał zagrożeń sklasyfikowanych jako krytyczne lub wysokie został wykonany, jednakże nie dało się wyeliminować zagrożeń (_**1 critical i 4 high** z powodu braku możliwości pobrania nowszej wersji paczki `pkg:golang/stdlib@1.22.4`_). Po usunięciu testu obraz jest pomyślnie wysłany do publicznego repozutorium.
 
-> [!NOTE]
-> Plik 'zad2.yml' - instrukcja do wyzwolenia usługi Github Actions dla tego zadania znajduje się w katalogu 'docker/.github/workflows/'  
+
+![2  nieudane_codker](https://github.com/user-attachments/assets/bc7b67a6-eb8c-46a2-ba7c-96a7509f2dcb)
+_nieudany workflow ze względu na przestarzałą paczkę_  
+
+![1  udane_docker](https://github.com/user-attachments/assets/5e3bca0a-7ee9-41f8-a1e9-17e0c406b7c6)
+_udany przebieg workflow bez sprawdzania obrazu narzędziem Scout_  
 
 ## Pliki wykorzystane w projekcie 
 
@@ -154,4 +164,6 @@ jobs:
 ```  
 
 > [!NOTE]
+> Plik 'zad2.yml' - instrukcja do wyzwolenia usługi Github Actions dla tego zadania znajduje się w katalogu 'docker/.github/workflows/'.
 > Reszta plików projektowych jest taka sama jak w zadaniu 1.
+
