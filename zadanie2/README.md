@@ -153,4 +153,5 @@ jobs:
             ghcr.io/${{ github.repository_owner }}/zadanie2:${{ github.sha }}
 ```  
 
-Reszta plików projektowych jest taka sama jak w zadaniu 1.
+> [!NOTE]
+> Reszta plików projektowych jest taka sama jak w zadaniu 1.
