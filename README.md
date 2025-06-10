@@ -1,5 +1,6 @@
 > [!NOTE]
-> __Every directory have inside it's own 'README.dm' or similar '.md' format information file.__
+> __Every directory have inside it's own 'README.dm' or similar '.md' format information file. All readmes are written in polish language__
+> 
 > 
 > In lab 5 are used Linux alpine-minirootfs-3.21.3-x86_64 and nginx images. 
 >
