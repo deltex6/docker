@@ -30,14 +30,10 @@ _Zdj.3.1. Wyświetlenie działąjących kontenerów oraz sieci_
 _Zdj.3.2. Wyświetlenie szczegółów dotyczących utworzonej sieci_
 
 
-_Zdj.3.3. wyświetlanie działąjących kontenerów oraz sieci_
+_Zdj.3.3. Weryfikacja dostępności stron WWW za pomocą skryptu sprawdzającego, czy adres URL zwraca kod '200' oraz zawartość pliku_
 
 
-_Zdj.3.4. wyświetlanie działąjących kontenerów oraz sieci_
+_Zdj.3.4. Walidacja logów za pomocą skryptu, który sprawdza, czy katalogi z logami istnieją oraz zawierają wybrane pliki, a następnie wyświetla 5 ostatnich wpisów_
 
 
-_Zdj.3.5. wyświetlanie działąjących kontenerów oraz sieci_
-
-
-
-
+_Zdj.3.5. Wyświetlenie po stronie hosta statycznych stron internetowych aplikacji_
