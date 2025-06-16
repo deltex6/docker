@@ -11,3 +11,6 @@
 > Zadanie2 also uses github actions 'zad2.yml' file, which is located in docker/.github/workflows/.
 >
 > In lab11 is used nginx image.
+>
+> In lab12 is used ...
+> 
