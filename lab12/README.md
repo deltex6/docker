@@ -19,7 +19,7 @@ tomas@SwMMKolbe:~/lab12$ docker-compose up -d
 tomas@SwMMKolbe:~/lab12$ docker compose ps
 ```
 
-</br> </br>
+</br>
 
 
 ## Zrzuty ekranu
@@ -31,7 +31,7 @@ tomas@SwMMKolbe:~/lab12$ docker compose ps
 _Zdj.1 Plik 'docker-compose.yaml'_
 
 
-</br> </br>
+</br>
 
 
 ![2  index_php](https://github.com/user-attachments/assets/1fc10113-3ec8-4639-9beb-c67b9742ca2e)
@@ -39,7 +39,7 @@ _Zdj.1 Plik 'docker-compose.yaml'_
 _Zdj.2 Plik 'index.php'_
 
 
-</br> </br>
+</br>
 
 
 
@@ -47,31 +47,33 @@ _Zdj.2 Plik 'index.php'_
 
 _Zdj.3 Plik 'default.conf'_
 
+</br>
+
 
 
 ![4  docker_compose_command](https://github.com/user-attachments/assets/f3322690-a9e8-4acc-b477-6f342c5999fd)
 
 _Zdj.4 Wywołanie komendy 'docker compose up -d'_
 
-
+</br>
 
 ![4  docker_compose_command](https://github.com/user-attachments/assets/db42fcaa-f5e5-48f2-a912-f93cb8756220)
 
 _Zdj.5 Wywołanie komendy 'docker compose ps'_
 
-
+</br>
 
 ![6  PHPMyAdmin](https://github.com/user-attachments/assets/b2f8396a-2433-46e5-9520-767d0417f582)
 
 _Zdj.6 Wyświetlona strona PHPMyAdmin_
 
-
+</br>
 
 ![7  StronaInternetowa](https://github.com/user-attachments/assets/65e9081b-725e-456e-8726-d7a6192e3b08)
 
 _Zdj.7 Porblem z wyswietleniem strony 'index.php'_
 
-
+</br>
 
 > [!NOTE]
 > DLa kontenera MySQL zmieniono port z 3307 na 3306, ponieważ 3306 był zajętym portem (prawdopodobnie przez inny mikroserwis mysql) i nie dało się wyłączyć przeszkadzającego mikroserwisu
