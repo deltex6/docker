@@ -1,4 +1,4 @@
-### (Wersja nieostateczna sprawozdania)
+# Sprawozdanie
 
 ## Użyte komendy
 
@@ -44,7 +44,36 @@ _Zdj.3 Plik 'default.conf'_
 
 
 
+![4  docker_compose_command](https://github.com/user-attachments/assets/f3322690-a9e8-4acc-b477-6f342c5999fd)
 
-_Zdj.3 Plik 'default.conf'_
+_Zdj.4 Wywołanie komendy 'docker compose up -d'_
+
+
+
+![4  docker_compose_command](https://github.com/user-attachments/assets/db42fcaa-f5e5-48f2-a912-f93cb8756220)
+
+_Zdj.5 Wywołanie komendy 'docker compose ps'_
+
+
+
+
+
+![6  PHPMyAdmin](https://github.com/user-attachments/assets/b2f8396a-2433-46e5-9520-767d0417f582)
+
+_Zdj.6 Wyświetlona strona PHPMyAdmin_
+
+
+
+![7  StronaInternetowa](https://github.com/user-attachments/assets/65e9081b-725e-456e-8726-d7a6192e3b08)
+
+_Zdj.7 Porblem z wyswietleniem strony 'index.php'_
+
+
+
+
+
+
+
+
 
 
