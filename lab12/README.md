@@ -21,6 +21,11 @@ tomas@SwMMKolbe:~/lab12$ docker compose ps
 
 </br> </br>
 
+
+## Zrzuty ekranu
+
+</br>
+
 ![1  Docker Composer file](https://github.com/user-attachments/assets/ba828f58-95c5-425c-a965-0d29ce1d88dd)
 
 _Zdj.1 Plik 'docker-compose.yaml'_
@@ -56,8 +61,6 @@ _Zdj.5 Wywołanie komendy 'docker compose ps'_
 
 
 
-
-
 ![6  PHPMyAdmin](https://github.com/user-attachments/assets/b2f8396a-2433-46e5-9520-767d0417f582)
 
 _Zdj.6 Wyświetlona strona PHPMyAdmin_
@@ -70,10 +73,7 @@ _Zdj.7 Porblem z wyswietleniem strony 'index.php'_
 
 
 
-
-
-
-
-
-
-
+> [!NOTE]
+> DLa kontenera MySQL zmieniono port z 3307 na 3306, ponieważ 3306 był zajętym portem (prawdopodobnie przez inny mikroserwis mysql) i nie dało się wyłączyć przeszkadzającego mikroserwisu
+>
+> Nie udało się wyświetlić strony z 'index.php' po wprowadzeniu URL: 'localhos:4001' z niewiadomych przyczyn.
