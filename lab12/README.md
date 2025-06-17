@@ -6,10 +6,14 @@
 tomas@SwMMKolbe:~$ mkdir lab12
 tomas@SwMMKolbe:~$ cd lab12/
 tomas@SwMMKolbe:~/lab12$ touch docker-compose.yaml
-tomas@SwMMKolbe:~/lab12$ mkdir html
-tomas@SwMMKolbe:~/lab12$ touch html/index.php
+tomas@SwMMKolbe:~/lab12$ mkdir php
+tomas@SwMMKolbe:~/lab12$ mkdir nginx
+tomas@SwMMKolbe:~/lab12$ touch nginx/default.conf
+tomas@SwMMKolbe:~/lab12$ touch php/index.php
 tomas@SwMMKolbe:~/lab12$ nano docker-compose.yaml
-tomas@SwMMKolbe:~/lab12$ nano html/index.php
+tomas@SwMMKolbe:~/lab12$ nano php/index.php
+tomas@SwMMKolbe:~/lab12$ nano php/index.php
+docker-compose up -d
 ```
 
 </br> </br>
